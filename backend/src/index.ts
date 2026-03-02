@@ -27,12 +27,16 @@ const httpServer = createServer(app);
 // @ts-ignore
 import cors from "cors";
 
+// log environment for debugging
+console.log("FRONTEND_URL env var =", process.env.FRONTEND_URL);
+
 const allowedOrigins = [
   "http://localhost:3000",
   "http://localhost:5173",
   "http://localhost:5174",
   process.env.FRONTEND_URL,
 ].filter(Boolean);
+console.log("Allowed CORS origins:", allowedOrigins);
 
 app.use(
   cors({
