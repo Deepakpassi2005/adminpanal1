@@ -11,7 +11,12 @@ export interface AuthRequest extends Request {
     name?: string;          // added so controllers can reference user.name safely
     classId?: string;
   };
+  body: any;
+  params: any;
+  query: any;
+  headers: any;
   file?: any; // for multer uploads
+  rawBody?: any;
 }
 
 export const authMiddleware = (
